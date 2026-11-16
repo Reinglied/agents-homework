@@ -1,0 +1,20 @@
+{
+  "status": "MATERIALS_READY_LAUNCH_GATED",
+  "coding_model": "gpt-6-luna",
+  "coding_model_version": "unknown; exact provider snapshot not exposed",
+  "reasoning_mode": "high",
+  "model_choice_source": "User explicitly selected GPT 6 Luna / high for both attempts",
+  "first_attempt_minutes_including_spec": 60,
+  "repair_round_minutes": 20,
+  "max_repair_rounds": 2,
+  "openspec_cli": "2.0.0",
+  "live_budget": null,
+  "public_tests_frozen": true,
+  "external_tests_frozen": true,
+  "isolation_verified": false,
+  "automatic_snapshot_hook_verified": false,
+  "public_case_count": 39,
+  "external_case_count": 39,
+  "snapshot_library_verified": true,
+  "budget_clock": "active executor wall time; sum spec and implementation; operator waits excluded"
+}

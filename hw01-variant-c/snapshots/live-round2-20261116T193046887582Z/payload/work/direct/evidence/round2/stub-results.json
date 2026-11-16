@@ -1,0 +1,31 @@
+{
+  "mode": "STUB",
+  "purpose": "source-read/citation mechanics only; does not grade prose truth",
+  "passed": 3,
+  "total": 3,
+  "checks": [
+    {
+      "id": "R2-L3-required-D06-read",
+      "mode": "STUB",
+      "status": "PASS",
+      "rejected_without_D06": true,
+      "successful_reads": [
+        "D01",
+        "D05",
+        "D06"
+      ]
+    },
+    {
+      "id": "R2-L3-required-D06-citation",
+      "mode": "STUB",
+      "status": "PASS",
+      "rejected_without_D06_citation": true
+    },
+    {
+      "id": "R2-preserve-D08",
+      "mode": "STUB",
+      "status": "PASS",
+      "successful_read": "D08"
+    }
+  ]
+}

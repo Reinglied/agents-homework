@@ -1,0 +1,15 @@
+Working directory: V:\GPT\experiment-c\ready\with-spec
+Command: & C:\Users\smirn\AppData\Local\Python\bin\python.exe -X utf8 -m unittest evidence.tests.test_agent_edges -v
+Combined stdout/stderr:
+test_citation_uses_returned_line_numbers_not_array_positions (evidence.tests.test_agent_edges.CitationEdgeChecks.test_citation_uses_returned_line_numbers_not_array_positions) ... ok
+test_large_range_fails_without_iterating_to_range_end (evidence.tests.test_agent_edges.CitationEdgeChecks.test_large_range_fails_without_iterating_to_range_end) ... ok
+test_non_citation_mentions_are_not_candidates (evidence.tests.test_agent_edges.CitationEdgeChecks.test_non_citation_mentions_are_not_candidates) ... ok
+test_sparse_range_and_unclosed_candidate_are_rejected (evidence.tests.test_agent_edges.CitationEdgeChecks.test_sparse_range_and_unclosed_candidate_are_rejected) ... ok
+test_successful_empty_search_allows_absence_without_citation (evidence.tests.test_agent_edges.CitationEdgeChecks.test_successful_empty_search_allows_absence_without_citation) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+
+Exit code: 0

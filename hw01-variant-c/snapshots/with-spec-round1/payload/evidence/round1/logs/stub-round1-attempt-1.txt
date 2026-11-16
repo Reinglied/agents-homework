@@ -1,0 +1,27 @@
+Working directory: V:\GPT\experiment-c\ready\with-spec
+Mode: STUB
+Command: & C:\Users\smirn\AppData\Local\Python\bin\python.exe -X utf8 -m unittest evidence.round1.test_round1 -v
+Combined stdout/stderr:
+test_b1_path_searches_and_reads_d06_with_the_disputed_editions (evidence.round1.test_round1.DisclosedScenarioRegressions.test_b1_path_searches_and_reads_d06_with_the_disputed_editions) ... FAIL
+test_b2_reads_d08_before_accepting_source_backed_answer (evidence.round1.test_round1.DisclosedScenarioRegressions.test_b2_reads_d08_before_accepting_source_backed_answer) ... ok
+test_search_by_document_id_finds_d08 (evidence.round1.test_round1.DisclosedScenarioRegressions.test_search_by_document_id_finds_d08) ... ok
+
+======================================================================
+FAIL: test_b1_path_searches_and_reads_d06_with_the_disputed_editions (evidence.round1.test_round1.DisclosedScenarioRegressions.test_b1_path_searches_and_reads_d06_with_the_disputed_editions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "V:\GPT\experiment-c\ready\with-spec\evidence\round1\test_round1.py", line 82, in test_b1_path_searches_and_reads_d06_with_the_disputed_editions
+    self.assertEqual(tool_events[0]["result"]["documents"][0]["id"], "D06")
+AssertionError: 'D05' != 'D06'
+- D05
+?   ^
++ D06
+?   ^
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+FAILED (failures=1)
+
+Exit code: 1
+Note: This run's log could not be written because evidence/round1/logs did not yet exist; transcript preserved after creating the directory.

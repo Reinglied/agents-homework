@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "label": "spec-documents-before-review-not-implementation",
+  "created_utc": "2026-11-15T18:24:02.785177+00:00",
+  "files": {
+    "agent.py": "225006c2356cbffc1d5d0b004cee789bed2bc537de8367a468b8993eca9f17ae",
+    "config.json": "af0640c264706775efb477c558ba179120a0ff4927e256e913d864954810ffe8",
+    "console_input.py": "23b47e6e0a1e104b00f3d5394c64d30585bafe9acb2976af153278f1d18b0b08",
+    "contract.md": "8bcc9cae469392b7eba09c9fd4724b19633ecb68cea746e51c13a7c5394ce058",
+    "docs.json": "2e665ceda2ceb2fbae4ed3863e8a35aa23135850a0a433d4fb99677087e86633",
+    "evidence/logs/manual-coverage.md": "80c4df9a6f895aa741511766b5903b0b90716936f7196a83915390b1ef0a71e2",
+    "evidence/logs/openspec-validate-exit-code.txt": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "evidence/logs/openspec-validate-output.txt": "5561ceb33f40b2fccfb4216e141cb45df735d71f80e85a729bb2f816d29942d5",
+    "evidence/prompts/stage-1-spec.md": "e45afd208506e147e59b3c2bfca0d9e06ec6e8f7d16e1c7b6eb6a2f6eeb0d690",
+    "evidence/work-log.md": "1dd07488364d8a34f7ebfbab48b3543f2a411571b519d20ad99fa8bfb56de80d",
+    "matrix.md": "43f5ec5479ebe55bb992024f326635c85d5eff49ad270649c0a8274699b0de9b",
+    "openspec/changes/reliable-agent/design.md": "c324a5246e701d7aa6ee98f7b4da0a724e477ade16d09ea860bda29f58567a83",
+    "openspec/changes/reliable-agent/proposal.md": "005ba93eb99b9eec5b23d88b896711a1260fafc2f3952853a0f237aad0a781f1",
+    "openspec/changes/reliable-agent/specs/agent/spec.md": "2594d73f025aab22cac5926ece0f1f14dea6536dc944f7daec615d4add74a2dd",
+    "openspec/changes/reliable-agent/tasks.md": "332f6284f3a23c425359c86eea402a82d3b07192bee2066995869a5286eb1f68",
+    "openspec/config.yaml": "85b53dd24fbe7d19c8b0f0ddccf5e82600c5c372c76b57a2a89dc34dfb0fc5b9",
+    "quality/harness.py": "0a84d5b79e29b7a6244fbfdf1232d42d5ff05779f419c47f9be1a6fc9e4e4d24",
+    "quality/public.json": "b4d3d12b12cf7407efca5d439bfa50746f9f4dbe173e666361bab2e1a562792f",
+    "TESTING.md": "ca64c00d0cb773add58f2c3ecebb871867d9e2bb79bc7615161dbb5b1c3a057d"
+  }
+}

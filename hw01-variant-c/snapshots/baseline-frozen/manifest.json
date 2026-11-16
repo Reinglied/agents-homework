@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "label": "baseline-only-not-first-result",
+  "created_utc": "2026-11-15T17:50:07.598427+00:00",
+  "files": {
+    "direct/agent.py": "225006c2356cbffc1d5d0b004cee789bed2bc537de8367a468b8993eca9f17ae",
+    "direct/config.json": "af0640c264706775efb477c558ba179120a0ff4927e256e913d864954810ffe8",
+    "direct/console_input.py": "23b47e6e0a1e104b00f3d5394c64d30585bafe9acb2976af153278f1d18b0b08",
+    "direct/contract.md": "66a72c5a5b4501c63fd4190b8f8f4a0e3717d554ceeafd64fa34ff1da6c6d9d9",
+    "direct/docs.json": "2e665ceda2ceb2fbae4ed3863e8a35aa23135850a0a433d4fb99677087e86633",
+    "direct/matrix.md": "43f5ec5479ebe55bb992024f326635c85d5eff49ad270649c0a8274699b0de9b",
+    "with-spec/agent.py": "225006c2356cbffc1d5d0b004cee789bed2bc537de8367a468b8993eca9f17ae",
+    "with-spec/config.json": "af0640c264706775efb477c558ba179120a0ff4927e256e913d864954810ffe8",
+    "with-spec/console_input.py": "23b47e6e0a1e104b00f3d5394c64d30585bafe9acb2976af153278f1d18b0b08",
+    "with-spec/contract.md": "66a72c5a5b4501c63fd4190b8f8f4a0e3717d554ceeafd64fa34ff1da6c6d9d9",
+    "with-spec/docs.json": "2e665ceda2ceb2fbae4ed3863e8a35aa23135850a0a433d4fb99677087e86633",
+    "with-spec/matrix.md": "43f5ec5479ebe55bb992024f326635c85d5eff49ad270649c0a8274699b0de9b"
+  }
+}

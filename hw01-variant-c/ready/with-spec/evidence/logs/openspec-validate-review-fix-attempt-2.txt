@@ -1,0 +1,61 @@
+Working directory: V:\GPT\experiment-c\ready\with-spec
+Command: & V:\GPT\openspec.exe validate --all --strict --json --no-interactive
+Combined stdout/stderr:
+{
+  "items": [
+    {
+      "id": "reliable-agent",
+      "type": "change",
+      "valid": false,
+      "issues": [
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Keep citation validation outside the tool-call budget\" must include at least one scenario"
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Validate citation syntax and provenance against read lines\" must include at least one scenario"
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Require citations to refer to successfully read lines\" must include at least one scenario"
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Preserve the absent-price expectation\" must include at least one scenario"
+        }
+      ],
+      "durationMs": 19
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 0,
+      "failed": 1
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 0,
+        "failed": 1
+      },
+      "spec": {
+        "items": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "V:\\GPT\\experiment-c\\ready\\with-spec",
+    "source": "nearest"
+  }
+}
+
+Exit code: 1

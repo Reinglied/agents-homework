@@ -1,0 +1,2257 @@
+[
+  {
+    "id": "X-accept-correct",
+    "requirements": [
+      "A1",
+      "M2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    }
+  },
+  {
+    "id": "X-A1-complete",
+    "requirements": [
+      "A1"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "a",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          },
+          {
+            "id": "b",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "После OCR проверьте числа, даты и имена по оригиналу [D01:1-2]. Перед API удалите персональные и конфиденциальные сведения и убедитесь в разрешении передачи [D02:1-2]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 3,
+      "answer": "После OCR проверьте числа, даты и имена по оригиналу [D01:1-2]. Перед API удалите персональные и конфиденциальные сведения и убедитесь в разрешении передачи [D02:1-2]."
+    }
+  },
+  {
+    "id": "X-A2-no-price",
+    "requirements": [
+      "A2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"цена лицензии\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D03\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "В этом корпусе стоимость лицензии не приведена (D03:3-4)."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "В этом корпусе стоимость лицензии не приведена (D03:3-4)."
+    }
+  },
+  {
+    "id": "X-positive-0",
+    "requirements": [
+      "M3",
+      "M2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2) Дата (2026-10-20). Упомянуты D01, [D01] и (D01)."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2) Дата (2026-10-20). Упомянуты D01, [D01] и (D01)."
+    }
+  },
+  {
+    "id": "X-positive-1",
+    "requirements": [
+      "M3",
+      "M2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Нужно разрешение передать материал сервису [D02:2]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Нужно разрешение передать материал сервису [D02:2]."
+    }
+  },
+  {
+    "id": "X-positive-2",
+    "requirements": [
+      "M3",
+      "M2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    }
+  },
+  {
+    "id": "X-bad-citation-0",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D02:0-2)"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D02:0-2)"
+  },
+  {
+    "id": "X-bad-citation-1",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D02:4-2)"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D02:4-2)"
+  },
+  {
+    "id": "X-bad-citation-2",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D02:50)"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D02:50)"
+  },
+  {
+    "id": "X-bad-citation-3",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D02:02)"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D02:02)"
+  },
+  {
+    "id": "X-bad-citation-4",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D02:2"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D02:2"
+  },
+  {
+    "id": "X-bad-citation-5",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D02:2)"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D02:2)"
+  },
+  {
+    "id": "X-bad-citation-6",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D02:2-)"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D02:2-)"
+  },
+  {
+    "id": "X-bad-citation-7",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D02:２)"
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D02:２)"
+  },
+  {
+    "id": "X-unread-id",
+    "requirements": [
+      "M2",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Достоверный ответ [D07:1]."
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Достоверный ответ [D07:1]."
+  },
+  {
+    "id": "X-snippet-not-read",
+    "requirements": [
+      "M4",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+  },
+  {
+    "id": "X-missing-reference",
+    "requirements": [
+      "M5",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверьте документ D01 (2026-10-20)."
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверьте документ D01 (2026-10-20)."
+  },
+  {
+    "id": "X-no-search",
+    "requirements": [
+      "M5",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+  },
+  {
+    "id": "X-empty-search",
+    "requirements": [
+      "M5"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "В доступном корпусе сведений не найдено."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "1": {
+        "result": {
+          "documents": []
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 2,
+      "tool_calls": 1,
+      "answer": "В доступном корпусе сведений не найдено."
+    }
+  },
+  {
+    "id": "X-failed-search",
+    "requirements": [
+      "M5",
+      "R2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"bad\": \"x\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Нет сведений."
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 5,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      1
+    ],
+    "validation_feedback": true,
+    "rejected_answer": "Нет сведений."
+  },
+  {
+    "id": "X-arguments-0",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "["
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-arguments-1",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "true"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-arguments-2",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "\"D01\""
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-arguments-3",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"   \"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-arguments-4",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"query\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-arguments-5",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": null}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-unknown-id",
+    "requirements": [
+      "A3",
+      "R1"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D99\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-unknown-tool",
+    "requirements": [
+      "M1"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "shell",
+              "arguments": "{\"command\": \"never execute\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "X-tool-exception-recovery",
+    "requirements": [
+      "A4",
+      "R1",
+      "S1"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "raise": "SYNTHETIC-SECRET-EXTERNAL-82"
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    }
+  },
+  {
+    "id": "X-tool-exception-stop",
+    "requirements": [
+      "A4",
+      "A5",
+      "R4"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_model_calls": 3
+    },
+    "tool_overrides": {
+      "2": {
+        "raise": "SYNTHETIC-SECRET-EXTERNAL-82"
+      },
+      "3": {
+        "raise": "SYNTHETIC-SECRET-EXTERNAL-82"
+      }
+    },
+    "expected": {
+      "final": false,
+      "model_calls": 3,
+      "tool_calls": 3
+    }
+  },
+  {
+    "id": "X-failed-read-no-right",
+    "requirements": [
+      "M4",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "result": {
+          "error": {
+            "code": "not_found",
+            "message": "Controlled read failure"
+          }
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 5,
+      "tool_calls": 3,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+  },
+  {
+    "id": "X-sparse-gap",
+    "requirements": [
+      "M2",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Строка [D02:2-4]"
+      },
+      {
+        "role": "assistant",
+        "content": "Две строки [D02:2] [D02:4]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "result": {
+          "id": "D02",
+          "title": "Numbered test source",
+          "version": "2026-10-20",
+          "lines": [
+            {
+              "line": 2,
+              "text": "Synthetic line two."
+            },
+            {
+              "line": 4,
+              "text": "Synthetic line four."
+            }
+          ]
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Две строки [D02:2] [D02:4]."
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Строка [D02:2-4]"
+  },
+  {
+    "id": "X-sparse-position",
+    "requirements": [
+      "M2",
+      "R3"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Строка [D02:1]"
+      },
+      {
+        "role": "assistant",
+        "content": "Две строки [D02:2] [D02:4]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "result": {
+          "id": "D02",
+          "title": "Numbered test source",
+          "version": "2026-10-20",
+          "lines": [
+            {
+              "line": 2,
+              "text": "Synthetic line two."
+            },
+            {
+              "line": 4,
+              "text": "Synthetic line four."
+            }
+          ]
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Две строки [D02:2] [D02:4]."
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Строка [D02:1]"
+  },
+  {
+    "id": "X-model-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_model_calls": 1
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 1,
+      "tool_calls": 1
+    }
+  },
+  {
+    "id": "X-exact-model-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {
+      "max_model_calls": 3
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    }
+  },
+  {
+    "id": "X-exact-tool-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          },
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+      }
+    ],
+    "config": {
+      "max_tool_calls": 2
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 2,
+      "tool_calls": 2,
+      "answer": "Уберите чувствительные сведения и проверьте разрешение передачи. (D02:1-2)"
+    }
+  },
+  {
+    "id": "X-oversized-batch",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          },
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_tool_calls": 1
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 1,
+      "tool_calls": 0
+    }
+  },
+  {
+    "id": "X-remaining-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          },
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_tool_calls": 2
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 2,
+      "tool_calls": 1
+    }
+  },
+  {
+    "id": "X-model-error",
+    "requirements": [
+      "M6"
+    ],
+    "question": "Что требуется перед внешним API?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"внешний API\"}"
+            }
+          }
+        ]
+      },
+      {
+        "raise_model": true
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 2,
+      "tool_calls": 1
+    }
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "isolation_verified": false,
+  "automatic_snapshot_hook_verified": false,
+  "actual_model_and_reasoning_verified": false,
+  "reason": "New executor contexts have not been created or launched; materials only.",
+  "launch_allowed": false
+}

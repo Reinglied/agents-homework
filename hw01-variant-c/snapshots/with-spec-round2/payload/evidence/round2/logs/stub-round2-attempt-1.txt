@@ -1,0 +1,14 @@
+Working directory: V:\GPT\experiment-c\ready\with-spec
+Mode: STUB
+Command: & C:\Users\smirn\AppData\Local\Python\bin\python.exe -X utf8 -m unittest evidence.round2.test_round2 -v
+Combined stdout/stderr:
+test_a2_unbracketed_citation_gets_concrete_repair_and_recovers (evidence.round2.test_round2.LastRoundRegressions.test_a2_unbracketed_citation_gets_concrete_repair_and_recovers) ... ok
+test_b1_reads_all_three_sources_before_final_response (evidence.round2.test_round2.LastRoundRegressions.test_b1_reads_all_three_sources_before_final_response) ... ok
+test_b2_classification_cites_the_classification_line (evidence.round2.test_round2.LastRoundRegressions.test_b2_classification_cites_the_classification_line) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.007s
+
+OK
+
+Exit code: 0

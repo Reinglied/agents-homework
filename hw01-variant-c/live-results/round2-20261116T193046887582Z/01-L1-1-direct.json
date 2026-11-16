@@ -1,0 +1,37 @@
+{
+  "result": {
+    "mode": "LIVE",
+    "question": "Что проверить после OCR и перед внешним API?",
+    "stop_reason": "model_error",
+    "model_calls": 1,
+    "tool_calls": 0,
+    "answer": null,
+    "trace": [
+      {
+        "event": "model",
+        "step": 1,
+        "error": {
+          "code": "model_error",
+          "message": "Вызов модели завершился ошибкой; автоматический повтор не выполняется."
+        }
+      }
+    ]
+  },
+  "process_error": null,
+  "started_utc": "2026-11-16T19:30:47.052259+00:00",
+  "duration_seconds": 2.76973780000003,
+  "model_transport_errors": [
+    {
+      "type": "AgentError",
+      "message": "Нет соединения или истёк таймаут. Можно использовать --replay."
+    }
+  ],
+  "config": {
+    "api_base": "https://ai.api.cloud.yandex.net/v1",
+    "model": "gpt://b1gv4m4vdn58mat55ggl/aliceai-llm-flash",
+    "max_model_calls": 6,
+    "max_tool_calls": 12,
+    "max_output_tokens": 350,
+    "timeout_seconds": 30
+  }
+}

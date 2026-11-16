@@ -1,0 +1,16 @@
+{
+  "source": "V:\\GPT\\python-agent",
+  "verification": "Nonblank lines match local before-console-fix backup plus import/read_key substitution. Extra blank lines exist, including multiline strings. Official original archive not independently verified.",
+  "files": {
+    "agent.py": "225006c2356cbffc1d5d0b004cee789bed2bc537de8367a468b8993eca9f17ae",
+    "docs.json": "2e665ceda2ceb2fbae4ed3863e8a35aa23135850a0a433d4fb99677087e86633",
+    "config.json": "af0640c264706775efb477c558ba179120a0ff4927e256e913d864954810ffe8",
+    "console_input.py": "23b47e6e0a1e104b00f3d5394c64d30585bafe9acb2976af153278f1d18b0b08"
+  },
+  "excluded": [
+    "live-result.json",
+    "adversarial-result.json",
+    "diagnose_api.py",
+    "agent.py.before-console-fix"
+  ]
+}

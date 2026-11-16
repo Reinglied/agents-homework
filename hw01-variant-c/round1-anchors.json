@@ -1,0 +1,10 @@
+{
+  "direct": {
+    "path": "V:\\GPT\\experiment-c\\snapshots\\direct-round1",
+    "manifest_sha256": "0622aa6d898c80fb9a81b0df590947a916a4983ff5c42b6df37269bd963525a3"
+  },
+  "with-spec": {
+    "path": "V:\\GPT\\experiment-c\\snapshots\\with-spec-round1",
+    "manifest_sha256": "49d2c693b735002434aaf50263ff22ac19f30dee29f4b12c5cdcd36c83146d7d"
+  }
+}

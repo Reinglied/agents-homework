@@ -1,0 +1,42 @@
+{
+  "result": {
+    "mode": "LIVE",
+    "question": "Сколько стоит лицензия DemoDesk?",
+    "stop_reason": "model_error",
+    "model_calls": 1,
+    "tool_calls": 0,
+    "answer": null,
+    "trace": [
+      {
+        "event": "model",
+        "step": 1,
+        "error": {
+          "code": "model_error",
+          "message": "Вызов модели завершился ошибкой; автоматических повторов нет."
+        },
+        "usage": {}
+      },
+      {
+        "event": "stop",
+        "stop_reason": "model_error"
+      }
+    ]
+  },
+  "process_error": null,
+  "started_utc": "2026-11-15T20:44:57.703072+00:00",
+  "duration_seconds": 21.202661100000114,
+  "model_transport_errors": [
+    {
+      "type": "AgentError",
+      "message": "Нет соединения или истёк таймаут. Можно использовать --replay."
+    }
+  ],
+  "config": {
+    "api_base": "https://ai.api.cloud.yandex.net/v1",
+    "model": "gpt://b1gv4m4vdn58mat55ggl/aliceai-llm-flash",
+    "max_model_calls": 6,
+    "max_tool_calls": 12,
+    "max_output_tokens": 350,
+    "timeout_seconds": 30
+  }
+}

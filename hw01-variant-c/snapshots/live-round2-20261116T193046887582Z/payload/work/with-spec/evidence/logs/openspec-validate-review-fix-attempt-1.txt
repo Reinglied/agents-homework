@@ -1,0 +1,71 @@
+Working directory: V:\GPT\experiment-c\ready\with-spec
+Command: & V:\GPT\openspec.exe validate --all --strict --json --no-interactive
+Combined stdout/stderr:
+{
+  "items": [
+    {
+      "id": "reliable-agent",
+      "type": "change",
+      "valid": false,
+      "issues": [
+        {
+          "level": "WARNING",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Return structured, recoverable tool errors\": Requirement text is very long (>500 characters). Move examples and edge cases into scenarios, or split it into separate requirements that each state one behavior."
+        },
+        {
+          "level": "WARNING",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Account exactly for bounded model and tool attempts\": Requirement text is very long (>500 characters). Move examples and edge cases into scenarios, or split it into separate requirements that each state one behavior."
+        },
+        {
+          "level": "WARNING",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Keep history, trace, and counters auditable\": Requirement text is very long (>500 characters). Move examples and edge cases into scenarios, or split it into separate requirements that each state one behavior."
+        },
+        {
+          "level": "WARNING",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Validate citation syntax and provenance against read lines\": Requirement text is very long (>500 characters). Move examples and edge cases into scenarios, or split it into separate requirements that each state one behavior."
+        },
+        {
+          "level": "WARNING",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Require the disclosed search/read evidence before accepting an answer\": Requirement text is very long (>500 characters). Move examples and edge cases into scenarios, or split it into separate requirements that each state one behavior."
+        },
+        {
+          "level": "WARNING",
+          "path": "agent/spec.md",
+          "message": "ADDED \"Preserve disclosed homework behavior\": Requirement text is very long (>500 characters). Move examples and edge cases into scenarios, or split it into separate requirements that each state one behavior."
+        }
+      ],
+      "durationMs": 19
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 0,
+      "failed": 1
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 0,
+        "failed": 1
+      },
+      "spec": {
+        "items": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "V:\\GPT\\experiment-c\\ready\\with-spec",
+    "source": "nearest"
+  }
+}
+
+Exit code: 1

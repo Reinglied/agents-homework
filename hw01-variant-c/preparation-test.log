@@ -1,0 +1,18 @@
+test_both_snapshots_required_and_anchored (test_gate.GateTests.test_both_snapshots_required_and_anchored) ... ok
+test_baseline_valid_controls (test_harness.HarnessTests.test_baseline_valid_controls) ... ok
+test_both_suites_cover_same_requirements (test_harness.HarnessTests.test_both_suites_cover_same_requirements) ... ok
+test_error_result_must_be_structured (test_harness.HarnessTests.test_error_result_must_be_structured) ... ok
+test_known_baseline_defects_are_detected (test_harness.HarnessTests.test_known_baseline_defects_are_detected) ... ok
+test_oracle_rejects_corrupted_outputs (test_harness.HarnessTests.test_oracle_rejects_corrupted_outputs) ... ok
+test_tool_feedback_id_is_checked (test_harness.HarnessTests.test_tool_feedback_id_is_checked) ... ok
+test_automatic_capture_on_executor_success_and_failure (test_snapshot.SnapshotTests.test_automatic_capture_on_executor_success_and_failure) ... ok
+test_change_during_copy_rejected (test_snapshot.SnapshotTests.test_change_during_copy_rejected) ... ok
+test_corruption_removal_and_addition (test_snapshot.SnapshotTests.test_corruption_removal_and_addition) ... ok
+test_nested_target_rejected (test_snapshot.SnapshotTests.test_nested_target_rejected) ... ok
+test_no_overwrite (test_snapshot.SnapshotTests.test_no_overwrite) ... ok
+test_roundtrip_and_immutable_copy (test_snapshot.SnapshotTests.test_roundtrip_and_immutable_copy) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.272s
+
+OK

@@ -1,0 +1,9 @@
+# Work log
+
+- 2026-11-15 21:18:56 MSK (18:18:56 UTC): began the specification stage in `experiment-c/ready/with-spec`. Stage budget: 60 minutes of active executor work (shared document + future implementation budget stated by user). Token/cost measurements: нет данных.
+- Read only the six requested project inputs: `agent.py`, `docs.json`, `config.json`, `contract.md`, `matrix.md`, and `TESTING.md` in this project copy. No code or common tests changed; no LIVE run.
+- Initial environment check: the project's TESTING.md states OpenSpec CLI 2.0.0 is available, but `openspec`, `npm`, and `npx` are not resolvable in this execution environment. Will still run the exact requested validation command and preserve its complete output and return code; do not fetch/install external material.
+- Internal review correction before validation: explicitly included atomic whole-batch budget admission, model-call failures in counters, successful-empty-search exception, citation gaps and line numbering, and positive controls. These were clarified from the disclosed contract/matrix; no expectation was added.
+- Manual matrix cross-check correction: added explicit M1 no-side-effect scenario for unknown tools and R1's D99 → D03 recovery path, both from the disclosed matrix.
+- Validation attempt: `openspec validate --all --strict --json --no-interactive`; CLI resolution failed before validation (`openspec` not recognized). Combined command output is in `evidence/logs/openspec-validate-output.txt`; process exit code is in `evidence/logs/openspec-validate-exit-code.txt` (1). Structural validation remains unverified because the stated CLI is not installed/resolvable in this environment.
+- 2026-11-15 21:22:33 MSK (18:22:33 UTC): ended the specification stage. Elapsed active stage time: 3 minutes 37 seconds; within the 60-minute shared budget. Tokens/cost: нет данных. No agent code, shared tests, or LIVE runs.

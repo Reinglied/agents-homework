@@ -1,0 +1,43 @@
+{
+  "mode": "STUB",
+  "purpose": "retrieval/reading mechanics only; does not grade generated prose",
+  "passed": 3,
+  "total": 3,
+  "checks": [
+    {
+      "id": "R1-L4-exact-id",
+      "mode": "STUB",
+      "status": "PASS",
+      "search_hit": "D08",
+      "successful_reads": [
+        "D08"
+      ]
+    },
+    {
+      "id": "R1-L4-empty-search",
+      "mode": "STUB",
+      "status": "PASS",
+      "rejected_before_read": true,
+      "successful_reads": [
+        "D08"
+      ]
+    },
+    {
+      "id": "R1-L3-version-source-path",
+      "mode": "STUB",
+      "status": "PASS",
+      "search_ids": [
+        "D01",
+        "D02",
+        "D05",
+        "D06"
+      ],
+      "successful_reads": [
+        "D01",
+        "D05",
+        "D06"
+      ],
+      "answer_preserved": true
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "direct": {
+    "runs": 15,
+    "content_points": 23,
+    "source_points": 22,
+    "max_points_per_axis": 30,
+    "task_solved": {
+      "yes": 10,
+      "partial": 2,
+      "no": 3
+    },
+    "unsupported_claims": 3,
+    "model_calls": 49,
+    "tool_calls": 35,
+    "tokens": 28236,
+    "duration_seconds_sum": 47.02318699999523,
+    "duration_seconds_median": 2.6466454999990674,
+    "transport_errors": 0,
+    "price": null
+  },
+  "with-spec": {
+    "runs": 15,
+    "content_points": 23,
+    "source_points": 21,
+    "max_points_per_axis": 30,
+    "task_solved": {
+      "yes": 9,
+      "partial": 3,
+      "no": 3
+    },
+    "unsupported_claims": 3,
+    "model_calls": 53,
+    "tool_calls": 34,
+    "tokens": 27870,
+    "duration_seconds_sum": 46.15021969999907,
+    "duration_seconds_median": 2.970585700000811,
+    "transport_errors": 0,
+    "price": null
+  }
+}

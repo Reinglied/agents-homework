@@ -1,0 +1,185 @@
+{
+  "result": {
+    "mode": "LIVE",
+    "question": "Сколько стоит лицензия DemoDesk?",
+    "stop_reason": "final_answer",
+    "model_calls": 5,
+    "tool_calls": 2,
+    "answer": " В учебных документах нет сведений о стоимости лицензии DemoDesk (D03:3).",
+    "trace": [
+      {
+        "event": "model",
+        "step": 1,
+        "reply": {
+          "role": "assistant",
+          "content": " В учебных документах нет сведений о стоимости лицензии DemoDesk."
+        },
+        "usage": {
+          "prompt_tokens": 297,
+          "total_tokens": 309,
+          "completion_tokens": 12,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "validation",
+        "error": "source_validation_failed",
+        "message": "Перед финальным ответом нужен успешный search_docs. Выполните поиск в рамках исходного вопроса."
+      },
+      {
+        "event": "model",
+        "step": 2,
+        "reply": {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_4_0",
+              "type": "function",
+              "function": {
+                "name": "search_docs",
+                "arguments": "{\"query\":\"лицензия DemoDesk стоимость\"}"
+              }
+            }
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 340,
+          "total_tokens": 357,
+          "completion_tokens": 17,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "tool",
+        "name": "search_docs",
+        "arguments": "{\"query\":\"лицензия DemoDesk стоимость\"}",
+        "result": {
+          "documents": [
+            {
+              "id": "D03",
+              "title": "Ограничения учебного корпуса и FAQ",
+              "snippet": "DemoDesk — вымышленное приложение. Это синтетические учебные правила, а не документация Click’n’Translate.\nКорпус содержит восемь коротких д"
+            },
+            {
+              "id": "D02",
+              "title": "Отправка текста во внешний API",
+              "snippet": "Перед отправкой во внешний API уберите персональные и конфиденциальные сведения.\nУбедитесь, что у вас есть разрешение передавать этот матери"
+            }
+          ]
+        }
+      },
+      {
+        "event": "model",
+        "step": 3,
+        "reply": {
+          "role": "assistant",
+          "content": " В учебных документах нет сведений о стоимости лицензии DemoDesk."
+        },
+        "usage": {
+          "prompt_tokens": 472,
+          "total_tokens": 484,
+          "completion_tokens": 12,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "validation",
+        "error": "source_validation_failed",
+        "message": "Поиск вернул документы, но ни один read_doc ещё не вернул строки. Прочитайте подходящий найденный документ."
+      },
+      {
+        "event": "model",
+        "step": 4,
+        "reply": {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_8_0",
+              "type": "function",
+              "function": {
+                "name": "read_doc",
+                "arguments": "{\"doc_id\":\"D03\"}"
+              }
+            }
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 518,
+          "total_tokens": 535,
+          "completion_tokens": 17,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "tool",
+        "name": "read_doc",
+        "arguments": "{\"doc_id\":\"D03\"}",
+        "result": {
+          "id": "D03",
+          "title": "Ограничения учебного корпуса и FAQ",
+          "version": "2026-10-25",
+          "lines": [
+            {
+              "line": 1,
+              "text": "DemoDesk — вымышленное приложение. Это синтетические учебные правила, а не документация Click’n’Translate."
+            },
+            {
+              "line": 2,
+              "text": "Корпус содержит восемь коротких документов. Агент читает только их."
+            },
+            {
+              "line": 3,
+              "text": "Тариф и цена лицензии в корпусе не указаны."
+            },
+            {
+              "line": 4,
+              "text": "Если сведений нет, ответ должен прямо сообщить об этом."
+            }
+          ]
+        }
+      },
+      {
+        "event": "model",
+        "step": 5,
+        "reply": {
+          "role": "assistant",
+          "content": " В учебных документах нет сведений о стоимости лицензии DemoDesk (D03:3)."
+        },
+        "usage": {
+          "prompt_tokens": 681,
+          "total_tokens": 699,
+          "completion_tokens": 18,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "stop",
+        "stop_reason": "final_answer"
+      }
+    ]
+  },
+  "process_error": null,
+  "started_utc": "2026-11-15T20:49:23.489229+00:00",
+  "duration_seconds": 3.403332699999737,
+  "model_transport_errors": [],
+  "config": {
+    "api_base": "https://ai.api.cloud.yandex.net/v1",
+    "model": "gpt://b1gv4m4vdn58mat55ggl/aliceai-llm-flash",
+    "max_model_calls": 6,
+    "max_tool_calls": 12,
+    "max_output_tokens": 350,
+    "timeout_seconds": 30
+  }
+}

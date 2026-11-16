@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\smirn\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "V:\\GPT\\experiment-c\\quality\\harness.py",
+    "--agent",
+    "V:\\GPT\\experiment-c\\evaluator\\round1-series\\work\\with-spec",
+    "--cases",
+    "V:\\GPT\\experiment-c\\quality\\public.json",
+    "--output",
+    "V:\\GPT\\experiment-c\\evaluator\\round1-series\\with-spec-public.json"
+  ],
+  "exit_code": 0,
+  "stdout": "STUB: 39/39 passed; report: V:\\GPT\\experiment-c\\evaluator\\round1-series\\with-spec-public.json\n",
+  "stderr": ""
+}

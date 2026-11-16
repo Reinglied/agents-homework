@@ -1,0 +1,6 @@
+Working directory: V:\GPT\experiment-c\ready\with-spec
+Command: & C:\Users\smirn\AppData\Local\Python\bin\python.exe -X utf8 quality/harness.py --agent . --cases quality/public.json --output evidence/logs/public.json
+Combined stdout/stderr:
+STUB: 39/39 passed; report: evidence\logs\public.json
+
+Exit code: 0

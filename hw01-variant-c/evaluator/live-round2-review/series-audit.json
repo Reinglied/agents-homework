@@ -1,0 +1,21 @@
+[
+  {
+    "series": "round2-20261116T193046887582Z",
+    "snapshot_sha256": "b885cc313f72235b607f90814a6ca7b841b5167ce1aa8b793abb07a0731b473f",
+    "runner_sha256": "aafdd57a8ae841af9ef5bf96dc9b10c5f8f587d8fc0171b53ebb6781281f0e32",
+    "statuses": {
+      "MODEL_OR_TRANSPORT_ERROR": 1,
+      "NOT RUN": 27,
+      "INTERRUPTED": 1,
+      "COMPLETED": 1
+    }
+  },
+  {
+    "series": "round2-20261116T193103642340Z",
+    "snapshot_sha256": "a75484a45bd34b23faec8ff53ba269150af9e181e73191371e5125e71b7ced54",
+    "runner_sha256": "aafdd57a8ae841af9ef5bf96dc9b10c5f8f587d8fc0171b53ebb6781281f0e32",
+    "statuses": {
+      "COMPLETED": 30
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "original_files_unchanged": {
+    "ready/with-spec/agent.py": true,
+    "ready/with-spec/config.json": true,
+    "ready/with-spec/console_input.py": true,
+    "ready/with-spec/contract.md": true,
+    "ready/with-spec/docs.json": true,
+    "ready/with-spec/matrix.md": true,
+    "ready/with-spec/quality/harness.py": true,
+    "ready/with-spec/quality/public.json": true,
+    "ready/with-spec/TESTING.md": true
+  },
+  "validation_exit": 0,
+  "snapshot_manifest_sha256": "93b5d906e32d41d688f210c79dd119f749436442000582208826e957a87a13af",
+  "reported_document_seconds": 501,
+  "remaining_implementation_seconds": 3099,
+  "timing_source": "executor work-log; not independent telemetry",
+  "implementation_tests_run": false
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "File": "ready/with-spec/agent.py",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/config.json",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/console_input.py",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/contract.md",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/docs.json",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/matrix.md",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/quality/harness.py",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/quality/public.json",
+    "Unchanged": true
+  },
+  {
+    "File": "ready/with-spec/TESTING.md",
+    "Unchanged": true
+  }
+]

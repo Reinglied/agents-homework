@@ -1,0 +1,22 @@
+{
+  "input_lock_sha256": "659491670487a33d1798e88656dc68ff406580f60c5eee2b6f5fad1759381235",
+  "prepared_snapshot_manifest_sha256": "667a88e8e0cead344acd46a5657f8bb0720fb7d9368b38a249eb79b4a33288da",
+  "infrastructure_tests": {
+    "passed": 13,
+    "failed": 0,
+    "log": "preparation-test.log"
+  },
+  "baseline_only": {
+    "public": "24/39",
+    "external": "23/39"
+  },
+  "coding_model": "gpt-6-luna",
+  "reasoning": "high",
+  "executors_started": false,
+  "live_started": false,
+  "archive_modified": false,
+  "remaining_launch_gates": [
+    "actual read isolation",
+    "automatic capture integration with selected executor surface"
+  ]
+}

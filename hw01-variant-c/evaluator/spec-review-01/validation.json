@@ -1,0 +1,94 @@
+{
+  "items": [
+    {
+      "id": "reliable-agent",
+      "type": "change",
+      "valid": false,
+      "issues": [
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "line": 9,
+          "message": "Requirement \"Preserve the agent interface and permitted capabilities\" is under \"## Requirements\", which is not a delta section, so it is ignored. Move it under \"## ADDED Requirements\", \"## MODIFIED Requirements\", \"## REMOVED Requirements\", or \"## RENAMED Requirements\"."
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "line": 19,
+          "message": "Requirement \"Return structured, recoverable tool errors\" is under \"## Requirements\", which is not a delta section, so it is ignored. Move it under \"## ADDED Requirements\", \"## MODIFIED Requirements\", \"## REMOVED Requirements\", or \"## RENAMED Requirements\"."
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "line": 53,
+          "message": "Requirement \"Account exactly for bounded model and tool attempts\" is under \"## Requirements\", which is not a delta section, so it is ignored. Move it under \"## ADDED Requirements\", \"## MODIFIED Requirements\", \"## REMOVED Requirements\", or \"## RENAMED Requirements\"."
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "line": 82,
+          "message": "Requirement \"Keep history, trace, and counters auditable\" is under \"## Requirements\", which is not a delta section, so it is ignored. Move it under \"## ADDED Requirements\", \"## MODIFIED Requirements\", \"## REMOVED Requirements\", or \"## RENAMED Requirements\"."
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "line": 103,
+          "message": "Requirement \"Validate citation syntax and provenance against read lines\" is under \"## Requirements\", which is not a delta section, so it is ignored. Move it under \"## ADDED Requirements\", \"## MODIFIED Requirements\", \"## REMOVED Requirements\", or \"## RENAMED Requirements\"."
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "line": 129,
+          "message": "Requirement \"Require the disclosed search/read evidence before accepting an answer\" is under \"## Requirements\", which is not a delta section, so it is ignored. Move it under \"## ADDED Requirements\", \"## MODIFIED Requirements\", \"## REMOVED Requirements\", or \"## RENAMED Requirements\"."
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "line": 173,
+          "message": "Requirement \"Preserve disclosed homework behavior\" is under \"## Requirements\", which is not a delta section, so it is ignored. Move it under \"## ADDED Requirements\", \"## MODIFIED Requirements\", \"## REMOVED Requirements\", or \"## RENAMED Requirements\"."
+        },
+        {
+          "level": "WARNING",
+          "path": "agent/spec.md",
+          "line": 7,
+          "message": "Section \"## Requirements\" is not carried into the main spec by archive. Move it into a requirement, or into proposal.md or design.md."
+        },
+        {
+          "level": "ERROR",
+          "path": "agent/spec.md",
+          "message": "No delta sections found. Add headers such as \"## ADDED Requirements\" or move non-delta notes outside specs/."
+        },
+        {
+          "level": "ERROR",
+          "path": "file",
+          "message": "Change must have at least one delta. No deltas found. Ensure your change has a specs/ directory with capability folders (e.g. specs/http-server/spec.md) containing .md files that use delta headers (## ADDED/MODIFIED/REMOVED/RENAMED Requirements) and that each requirement includes at least one \"#### Scenario:\" block. If this change intentionally modifies no specs (pure refactor, tooling, docs), set \"skip_specs: true\" in the change's .openspec.yaml instead. Tip: run \"openspec change show <change-id> --json --deltas-only\" to inspect parsed deltas."
+        }
+      ],
+      "durationMs": 17
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 0,
+      "failed": 1
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 0,
+        "failed": 1
+      },
+      "spec": {
+        "items": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "V:\\GPT\\experiment-c\\ready\\with-spec",
+    "source": "nearest"
+  }
+}

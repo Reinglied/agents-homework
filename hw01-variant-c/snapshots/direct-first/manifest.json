@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "label": "direct-first-before-external-review",
+  "created_utc": "2026-11-15T18:25:14.540088+00:00",
+  "files": {
+    "__pycache__/agent.cpython-314.pyc": "3f3a2b0391e067a33c54c138adb923502d6a6e1f53abf61f336484356d05755c",
+    "__pycache__/console_input.cpython-314.pyc": "e1982701d1d2371fbd82e87a53d91532567496b1938d9d84823a739f136340d7",
+    "agent.py": "ac8bbff0de90e2deca9a2967fe6f500514d4dec53a50ccf699978510338bc1c2",
+    "config.json": "af0640c264706775efb477c558ba179120a0ff4927e256e913d864954810ffe8",
+    "console_input.py": "23b47e6e0a1e104b00f3d5394c64d30585bafe9acb2976af153278f1d18b0b08",
+    "contract.md": "8bcc9cae469392b7eba09c9fd4724b19633ecb68cea746e51c13a7c5394ce058",
+    "docs.json": "2e665ceda2ceb2fbae4ed3863e8a35aa23135850a0a433d4fb99677087e86633",
+    "evidence/completion.md": "c456b5b72d52ed468aa07e0db7ebcb57e11b504fac6ee32f38f02596f39b0929",
+    "evidence/logs/public.json": "a38e06257d431fa7145f86f62334cd36017b0b8f4583384cbdc89c6790823f7f",
+    "evidence/logs/public.stdout.log": "4b4fdf375d477d224a34c63e757eba6f6c2ae9f45b0f7f5705cc82075b3ea730",
+    "evidence/logs/replay.stdout.log": "7162744d6f648f9d777c44c9134c2ba0abd2d25fc9ae31de44d3fecacd300749",
+    "evidence/prompts/initial.md": "3f355a97c00f9e5332aad4da4dd6c3c3ac54caa129bf0e4500088a861dc8e7d4",
+    "evidence/work-log.md": "a9ab45f654da60ca2255a8ba2dbe1ffb8ef2c97d8d1b12cfa224d527fbc5e40a",
+    "matrix.md": "43f5ec5479ebe55bb992024f326635c85d5eff49ad270649c0a8274699b0de9b",
+    "quality/harness.py": "0a84d5b79e29b7a6244fbfdf1232d42d5ff05779f419c47f9be1a6fc9e4e4d24",
+    "quality/public.json": "b4d3d12b12cf7407efca5d439bfa50746f9f4dbe173e666361bab2e1a562792f",
+    "TESTING.md": "ca64c00d0cb773add58f2c3ecebb871867d9e2bb79bc7615161dbb5b1c3a057d"
+  }
+}

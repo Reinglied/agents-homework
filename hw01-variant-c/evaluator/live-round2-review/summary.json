@@ -1,0 +1,20 @@
+{
+  "direct": {
+    "solved": 10,
+    "content": 20,
+    "sources": 20,
+    "model_calls": 67,
+    "tool_calls": 40,
+    "tokens": 50026,
+    "duration_seconds": 64.49103970000078
+  },
+  "with-spec": {
+    "solved": 15,
+    "content": 30,
+    "sources": 30,
+    "model_calls": 63,
+    "tool_calls": 42,
+    "tokens": 46933,
+    "duration_seconds": 60.597559100000126
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "mode": "LIVE",
+  "series": "round1",
+  "anchors": {
+    "direct": {
+      "path": "V:\\GPT\\experiment-c\\snapshots\\direct-round1",
+      "manifest_sha256": "0622aa6d898c80fb9a81b0df590947a916a4983ff5c42b6df37269bd963525a3"
+    },
+    "with-spec": {
+      "path": "V:\\GPT\\experiment-c\\snapshots\\with-spec-round1",
+      "manifest_sha256": "49d2c693b735002434aaf50263ff22ac19f30dee29f4b12c5cdcd36c83146d7d"
+    }
+  },
+  "config": {
+    "api_base": "https://ai.api.cloud.yandex.net/v1",
+    "model": "gpt://b1gv4m4vdn58mat55ggl/aliceai-llm-flash",
+    "max_model_calls": 6,
+    "max_tool_calls": 12,
+    "max_output_tokens": 350,
+    "timeout_seconds": 30
+  },
+  "runner_sha256": "de3b1f840e380f77a12ab76bd33bcb92b6cc1b9ac0cbf225c409b59e1dc7510d",
+  "plan_sha256": "cea83e54bed84c57d8d3eef70908ffcd6bab677e837d118ed02a05152169e410",
+  "retries": 0,
+  "note": "Auth/quota failures stop remaining planned runs; completed failures are not retried."
+}

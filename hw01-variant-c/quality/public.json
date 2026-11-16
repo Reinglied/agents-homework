@@ -1,0 +1,2257 @@
+[
+  {
+    "id": "P-accept-correct",
+    "requirements": [
+      "A1",
+      "M2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    }
+  },
+  {
+    "id": "P-A1-complete",
+    "requirements": [
+      "A1"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "a",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          },
+          {
+            "id": "b",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D02\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "После OCR проверьте числа, даты и имена по оригиналу [D01:1-2]. Перед API удалите персональные и конфиденциальные сведения и убедитесь в разрешении передачи [D02:1-2]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 3,
+      "answer": "После OCR проверьте числа, даты и имена по оригиналу [D01:1-2]. Перед API удалите персональные и конфиденциальные сведения и убедитесь в разрешении передачи [D02:1-2]."
+    }
+  },
+  {
+    "id": "P-A2-no-price",
+    "requirements": [
+      "A2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"цена лицензии\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D03\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "В этом корпусе стоимость лицензии не приведена (D03:3-4)."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "В этом корпусе стоимость лицензии не приведена (D03:3-4)."
+    }
+  },
+  {
+    "id": "P-positive-0",
+    "requirements": [
+      "M3",
+      "M2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2] Дата (2026-10-20). Упомянуты D01, [D01] и (D01)."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2] Дата (2026-10-20). Упомянуты D01, [D01] и (D01)."
+    }
+  },
+  {
+    "id": "P-positive-1",
+    "requirements": [
+      "M3",
+      "M2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Следует свериться с оригиналом [D01:2]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Следует свериться с оригиналом [D01:2]."
+    }
+  },
+  {
+    "id": "P-positive-2",
+    "requirements": [
+      "M3",
+      "M2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. (D01:1-2)"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. (D01:1-2)"
+    }
+  },
+  {
+    "id": "P-bad-citation-0",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D01:0]"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D01:0]"
+  },
+  {
+    "id": "P-bad-citation-1",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D01:3-1]"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D01:3-1]"
+  },
+  {
+    "id": "P-bad-citation-2",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D01:1-999]"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D01:1-999]"
+  },
+  {
+    "id": "P-bad-citation-3",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D01:01]"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D01:01]"
+  },
+  {
+    "id": "P-bad-citation-4",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D01:1"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D01:1"
+  },
+  {
+    "id": "P-bad-citation-5",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. (D01:1]"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. (D01:1]"
+  },
+  {
+    "id": "P-bad-citation-6",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D01:1-x]"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D01:1-x]"
+  },
+  {
+    "id": "P-bad-citation-7",
+    "requirements": [
+      "M2",
+      "M3",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверка. [D01:١]"
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверка. [D01:١]"
+  },
+  {
+    "id": "P-unread-id",
+    "requirements": [
+      "M2",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Достоверный ответ [D07:1]."
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Достоверный ответ [D07:1]."
+  },
+  {
+    "id": "P-snippet-not-read",
+    "requirements": [
+      "M4",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+  },
+  {
+    "id": "P-missing-reference",
+    "requirements": [
+      "M5",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Проверьте документ D01 (2026-10-20)."
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Проверьте документ D01 (2026-10-20)."
+  },
+  {
+    "id": "P-no-search",
+    "requirements": [
+      "M5",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+  },
+  {
+    "id": "P-empty-search",
+    "requirements": [
+      "M5"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "В доступном корпусе сведений не найдено."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "1": {
+        "result": {
+          "documents": []
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 2,
+      "tool_calls": 1,
+      "answer": "В доступном корпусе сведений не найдено."
+    }
+  },
+  {
+    "id": "P-failed-search",
+    "requirements": [
+      "M5",
+      "R2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"bad\": \"x\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Нет сведений."
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 5,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      1
+    ],
+    "validation_feedback": true,
+    "rejected_answer": "Нет сведений."
+  },
+  {
+    "id": "P-arguments-0",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-arguments-1",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "null"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-arguments-2",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "[]"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-arguments-3",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-arguments-4",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\", \"extra\": 1}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-arguments-5",
+    "requirements": [
+      "A3",
+      "R2"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": 42}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-unknown-id",
+    "requirements": [
+      "A3",
+      "R1"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D99\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-unknown-tool",
+    "requirements": [
+      "M1"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "bad",
+            "type": "function",
+            "function": {
+              "name": "shell",
+              "arguments": "{\"command\": \"never execute\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "error_tools": [
+      2
+    ]
+  },
+  {
+    "id": "P-tool-exception-recovery",
+    "requirements": [
+      "A4",
+      "R1",
+      "S1"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "raise": "SYNTHETIC-SECRET-PUBLIC-19"
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    }
+  },
+  {
+    "id": "P-tool-exception-stop",
+    "requirements": [
+      "A4",
+      "A5",
+      "R4"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_model_calls": 3
+    },
+    "tool_overrides": {
+      "2": {
+        "raise": "SYNTHETIC-SECRET-PUBLIC-19"
+      },
+      "3": {
+        "raise": "SYNTHETIC-SECRET-PUBLIC-19"
+      }
+    },
+    "expected": {
+      "final": false,
+      "model_calls": 3,
+      "tool_calls": 3
+    }
+  },
+  {
+    "id": "P-failed-read-no-right",
+    "requirements": [
+      "M4",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "result": {
+          "error": {
+            "code": "not_found",
+            "message": "Controlled read failure"
+          }
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 5,
+      "tool_calls": 3,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+  },
+  {
+    "id": "P-sparse-gap",
+    "requirements": [
+      "M2",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Строка [D01:2-4]"
+      },
+      {
+        "role": "assistant",
+        "content": "Две строки [D01:2] [D01:4]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "result": {
+          "id": "D01",
+          "title": "Numbered test source",
+          "version": "2026-10-20",
+          "lines": [
+            {
+              "line": 2,
+              "text": "Synthetic line two."
+            },
+            {
+              "line": 4,
+              "text": "Synthetic line four."
+            }
+          ]
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Две строки [D01:2] [D01:4]."
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Строка [D01:2-4]"
+  },
+  {
+    "id": "P-sparse-position",
+    "requirements": [
+      "M2",
+      "R3"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Строка [D01:1]"
+      },
+      {
+        "role": "assistant",
+        "content": "Две строки [D01:2] [D01:4]."
+      }
+    ],
+    "config": {},
+    "tool_overrides": {
+      "2": {
+        "result": {
+          "id": "D01",
+          "title": "Numbered test source",
+          "version": "2026-10-20",
+          "lines": [
+            {
+              "line": 2,
+              "text": "Synthetic line two."
+            },
+            {
+              "line": 4,
+              "text": "Synthetic line four."
+            }
+          ]
+        }
+      }
+    },
+    "expected": {
+      "final": true,
+      "model_calls": 4,
+      "tool_calls": 2,
+      "answer": "Две строки [D01:2] [D01:4]."
+    },
+    "validation_feedback": true,
+    "rejected_answer": "Строка [D01:1]"
+  },
+  {
+    "id": "P-model-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_model_calls": 1
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 1,
+      "tool_calls": 1
+    }
+  },
+  {
+    "id": "P-exact-model-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "r1",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {
+      "max_model_calls": 3
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 3,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    }
+  },
+  {
+    "id": "P-exact-tool-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          },
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+      }
+    ],
+    "config": {
+      "max_tool_calls": 2
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": true,
+      "model_calls": 2,
+      "tool_calls": 2,
+      "answer": "Сначала OCR, затем сверка чисел, дат и имён с изображением. [D01:1-2]"
+    }
+  },
+  {
+    "id": "P-oversized-batch",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          },
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_tool_calls": 1
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 1,
+      "tool_calls": 0
+    }
+  },
+  {
+    "id": "P-remaining-budget",
+    "requirements": [
+      "A5"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          },
+          {
+            "id": "r",
+            "type": "function",
+            "function": {
+              "name": "read_doc",
+              "arguments": "{\"doc_id\": \"D01\"}"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "max_tool_calls": 2
+    },
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 2,
+      "tool_calls": 1
+    }
+  },
+  {
+    "id": "P-model-error",
+    "requirements": [
+      "M6"
+    ],
+    "question": "Что проверить после OCR?",
+    "steps": [
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "s1",
+            "type": "function",
+            "function": {
+              "name": "search_docs",
+              "arguments": "{\"query\": \"OCR\"}"
+            }
+          }
+        ]
+      },
+      {
+        "raise_model": true
+      }
+    ],
+    "config": {},
+    "tool_overrides": {},
+    "expected": {
+      "final": false,
+      "model_calls": 2,
+      "tool_calls": 1
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "branch": "with-spec",
+  "snapshot_manifest_sha256": "d65852aab8a8449f44408112690bba5dd2d8058cf1d45341a2735ac3772ac75c",
+  "external_tests_run": false,
+  "capture_method": "Organizer snapshot after user relayed completion; automatic end-of-turn hook not connected.",
+  "limitations": [
+    "No independent proof of no edits between completion and snapshot.",
+    "Contains available on-disk evidence, not verified full chat export."
+  ],
+  "reported_implementation_seconds": 537,
+  "reported_total_seconds": 1038
+}

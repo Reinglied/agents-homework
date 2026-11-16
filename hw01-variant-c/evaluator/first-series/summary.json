@@ -1,0 +1,54 @@
+{
+  "direct": {
+    "unchanged_inputs": {
+      "docs.json": true,
+      "config.json": true,
+      "console_input.py": true,
+      "contract.md": true,
+      "matrix.md": true,
+      "TESTING.md": true,
+      "quality/harness.py": true,
+      "quality/public.json": true
+    },
+    "results": {
+      "public": {
+        "passed": 39,
+        "total": 39,
+        "exit_code": 0,
+        "failures": []
+      },
+      "external": {
+        "passed": 39,
+        "total": 39,
+        "exit_code": 0,
+        "failures": []
+      }
+    }
+  },
+  "with-spec": {
+    "unchanged_inputs": {
+      "docs.json": true,
+      "config.json": true,
+      "console_input.py": true,
+      "contract.md": true,
+      "matrix.md": true,
+      "TESTING.md": true,
+      "quality/harness.py": true,
+      "quality/public.json": true
+    },
+    "results": {
+      "public": {
+        "passed": 39,
+        "total": 39,
+        "exit_code": 0,
+        "failures": []
+      },
+      "external": {
+        "passed": 39,
+        "total": 39,
+        "exit_code": 0,
+        "failures": []
+      }
+    }
+  }
+}
